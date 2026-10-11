@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151714">
+  <meta name="description" content="Mizhi — a personal photographic collection.">
+  <title>Mizhi — Photography</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="photos.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#collection">Skip to photographs</a>
+  <canvas id="atmosphere" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="wordmark" href="#" aria-label="Mizhi home">mizhi<span class="mark">◉</span></a>
+    <a class="nav-link" href="#collection">Photographs <span aria-hidden="true">↗</span></a>
+    <button id="motion" class="motion-toggle" aria-pressed="true" aria-label="Background motion" title="Toggle motion"><span></span><span></span><span></span></button>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-top"><span>A personal collection</span><span id="hero-count">Photography</span></div>
+      <h1 id="title">Mizhi<span class="title-dot">.</span></h1>
+      <div class="hero-stage" id="hero-stage" aria-hidden="true"></div>
+      <div class="hero-bottom"><span class="tiny-brand">മിഴി <span>/</span> Photography</span><a href="#collection">Explore the collection <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <section class="collection" id="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><h2 id="collection-title">Selected frames<span id="count"></span></h2><span class="section-index">01 / Gallery</span></div>
+      <div id="gallery" class="gallery"></div>
+      <p id="empty" hidden>No photographs yet.</p>
+      <noscript><p>Please enable JavaScript to view this collection.</p></noscript>
+    </section>
+  </main>
+  <footer><a class="footer-logo" href="#">Mizhi.</a><span>© <span id="year"></span> Mizhi</span><a href="#">Back to top ↑</a></footer>
+  <dialog id="viewer" aria-label="Photograph viewer">
+    <div class="viewer-top"><span id="viewer-position" aria-live="polite"></span><button id="close" autofocus aria-label="Close photograph">Close <span aria-hidden="true">×</span></button></div>
+    <div class="viewer-image-wrap"><img id="viewer-image" alt=""><p id="viewer-error" hidden>This photograph could not be loaded.</p></div>
+    <div class="viewer-bottom"><span id="viewer-caption"></span><div class="viewer-controls"><button id="previous" aria-label="Previous photograph">←</button><button id="next" aria-label="Next photograph">→</button></div></div>
+  </dialog>
+</body>
+</html>
